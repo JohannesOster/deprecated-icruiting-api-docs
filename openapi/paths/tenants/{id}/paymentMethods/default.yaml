@@ -1,0 +1,4 @@
+post:
+  tags:
+    - tenants
+  summary: Set default payment method

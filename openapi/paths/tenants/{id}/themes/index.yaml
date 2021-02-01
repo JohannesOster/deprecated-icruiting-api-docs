@@ -1,0 +1,8 @@
+post:
+  tags:
+    - tenants
+  summary: Create theme
+delete:
+  tags:
+    - tenants
+  summary: Delete theme

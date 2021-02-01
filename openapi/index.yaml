@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  title: icruiting-api
+paths:
+  /tenants:
+    $ref: ./paths/tenants/index.yaml
+  /tenants/{id}:
+    $ref: ./paths/tenants/{id}/index.yaml
+  /tenants/{id}/themes:
+    $ref: ./paths/tenants/{id}/themes/index.yaml
+  /tenants/{id}/subscriptions:
+    $ref: ./paths/tenants/{id}/subscriptions/index.yaml
+  /tenants/{id}/subscriptions/{id}:
+    $ref: ./paths/tenants/{id}/subscriptions/{id}.yaml
+  /tenants/{id}/paymentMethods:
+    $ref: ./paths/tenants/{id}/paymentMethods/index.yaml
+  /tenants/{id}/paymentMethods/default:
+    $ref: ./paths/tenants/{id}/paymentMethods/default.yaml
+  /tenants/{id}/paymentMethods/setupIntent:
+    $ref: ./paths/tenants/{id}/paymentMethods/setupIntent.yaml
+  /tenants/{id}/paymentMethods/{id}:
+    $ref: ./paths/tenants/{id}/paymentMethods/{id}.yaml

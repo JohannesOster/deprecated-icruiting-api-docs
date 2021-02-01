@@ -1,0 +1,8 @@
+post:
+  tags:
+    - tenants
+  summary: Create subscription
+get:
+  tags:
+    - tenants
+  summary: List subscriptions

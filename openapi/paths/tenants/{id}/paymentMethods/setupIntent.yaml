@@ -1,0 +1,4 @@
+get:
+  tags:
+    - tenants
+  summary: Create stripe setup intent

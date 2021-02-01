@@ -1,0 +1,20 @@
+{
+  "name": "icruiting-api-docs",
+  "version": "1.0.0",
+  "description": "The developer documentation for the icruiting REST API.",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "npx redoc-cli serve -w openapi/index.yaml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohannesOster/icruiting-api-docs.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JohannesOster/icruiting-api-docs/issues"
+  },
+  "homepage": "https://github.com/JohannesOster/icruiting-api-docs#readme"
+}
