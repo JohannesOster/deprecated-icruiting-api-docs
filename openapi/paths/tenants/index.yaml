@@ -2,7 +2,59 @@ post:
   tags:
     - tenants
   summary: Sign Up new user and create new tenant
-delete:
-  tags:
-    - tenants
-  summary: Delete tenant
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            tenantName:
+              type: string
+              description: The name of your organization, your team, your department, etc.
+            email:
+              type: string
+              description: The email address for the admin account of your tenant
+            password:
+              type: string
+              description: The password for the admin account of your tenant
+            stripePriceId:
+              type: string
+              description: The id of the stripe price the stripe subscription should be created with. (=the selected subscription)
+          required:
+            - tenantName
+            - email
+            - password
+            - stripePriceId
+  responses:
+    201:
+      description: Successfully signed up user and created tenant
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              user:
+                type: object
+                description: A CognitoUser
+              tenant:
+                type: object
+                properties:
+                  tenantId:
+                    type: string
+                  tenantName:
+                    type: string
+                  stripeCustomerId:
+                    type: string
+                  theme:
+                    type: string
+                    description: The URL to a theme css file
+                  createdAt:
+                    type: string
+              subscription:
+                type: object
+                description: A stripe subscription
+    422:
+      description: Unprocessable Entity
+    500:
+      description: Internal Server Error

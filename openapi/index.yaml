@@ -1,6 +1,9 @@
 openapi: 3.0.0
 info:
   title: icruiting-api
+  contact:
+    name: Johannes Oster
+    email: johannes.oster@icruiting.at
 paths:
   /tenants:
     $ref: ./paths/tenants/index.yaml

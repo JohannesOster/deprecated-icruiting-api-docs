@@ -2,3 +2,7 @@ get:
   tags:
     - tenants
   summary: Retrieve tenant
+delete:
+  tags:
+    - tenants
+  summary: Delete tenant
