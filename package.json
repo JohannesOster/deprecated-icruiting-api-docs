@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "The developer documentation for the icruiting REST API.",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "speccy": "^0.11.0"
+  },
   "scripts": {
-    "start": "npx redoc-cli serve -w openapi/index.yaml"
+    "start": "npx redoc-cli serve -w openapi/index.yaml",
+    "lint": "speccy lint openapi/index.yaml"
   },
   "repository": {
     "type": "git",

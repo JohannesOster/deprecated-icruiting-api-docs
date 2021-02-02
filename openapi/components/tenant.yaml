@@ -1,0 +1,17 @@
+type: object
+required:
+  - tenantId
+  - tenantName
+  - stripeCustomerId
+properties:
+  tenantId:
+    type: string
+  tenantName:
+    type: string
+  stripeCustomerId:
+    type: string
+  theme:
+    type: string
+    description: The URL to a theme css file
+  createdAt:
+    type: string

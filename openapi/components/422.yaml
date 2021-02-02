@@ -1,0 +1,25 @@
+description: Unprocessable Entity
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          enum: [422]
+          description: The HTTP Status Code
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              msg:
+                type: string
+                description: An error message
+              param:
+                type: string
+                description: The name of the invalid parameter
+              location:
+                type: string
+                # enum: ["body", "cookies", "headers", "params", "query"]
+                description: The location the error occured

@@ -1,8 +1,32 @@
 get:
   tags:
     - tenants
+  operationId: retrieveTenant
   summary: Retrieve tenant
+  description: Retrieve a specific tenant by its tenantId
+  responses:
+    200:
+      description: Tenant was retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/tenant.yaml
+    404:
+      $ref: ../../../components/404.yaml
+    500:
+      $ref: ../../../components/500.yaml
 delete:
   tags:
     - tenants
   summary: Delete tenant
+  description: Delete a specific tenant
+  responses:
+    200:
+      description: Successfully deleted tenant
+      content:
+        application/json:
+          schema: {}
+    404:
+      $ref: ../../../components/404.yaml
+    500:
+      $ref: ../../../components/500.yaml
