@@ -3,7 +3,17 @@ post:
     - tenants
   operationId: createTenant
   summary: Create tenant
-  description: Sign Up a new user and create a new tenant with new user as an admin
+  description: '
+    <p>
+    Sign Up a new user and create a new tenant entity. <br />
+    The new user will have the user-role "admin" in the newly created tenant.
+    Furthermore, a stripe subscription will be created with the given price (stripePriceId).
+    It will start a 30-day free trial without requireing a payment method.
+    </p>
+    <p>
+    <i>NOTE:</i> This endpoint combines different concerns (signing up a user, createing a tenant, etc.).
+    I decided to stay with one single endpoint, since the actions in isolation have no use case yet.
+    </p>'
   requestBody:
     required: true
     content:
