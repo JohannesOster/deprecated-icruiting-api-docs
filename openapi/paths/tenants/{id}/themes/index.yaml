@@ -16,6 +16,8 @@ post:
       multipart/form-data:
         schema:
           type: object
+          required:
+            - theme
           properties:
             theme:
               type: string
