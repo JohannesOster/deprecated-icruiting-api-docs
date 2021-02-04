@@ -1,8 +1,40 @@
 post:
   tags:
     - tenants
-  summary: Create theme
+  summary: Upload theme
+  description: '
+  <p>Uplod a new .css theme for the tenants application-forms.</p>
+  <p>This will update the tenants theme column to the newly created download link</p>
+  <p>
+    <i>Note:</i>In order to return a url to the uploaded theme-file a presigned URL would have to be created, which would take additional time.
+    Since there is no user case for direct access nothing is returned.
+  </p>
+  '
+  responses:
+    201:
+      description: Successfully uploaded theme
+      content:
+        application/json:
+          schema: {}
+    500:
+      $ref: ../../../../components/500.yaml
 delete:
   tags:
     - tenants
   summary: Delete theme
+  description: '
+  <p>Delete .css theme file and update theme column of tenant entity.</p>
+  <p>
+  <i>Note:</i>Theme is not a independently resource.
+  Therefore it is not referenced by an id but indirectly with the tenantId provided by the JWT-payload.
+  </p>
+  '
+  responses:
+    200:
+      description: Successfully deleted theme
+      content:
+        application/json:
+          schema: {}
+    500:
+      $ref: ../../../../components/500.yaml
+      
