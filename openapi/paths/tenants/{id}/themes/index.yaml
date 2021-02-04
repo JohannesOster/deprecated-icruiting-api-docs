@@ -10,12 +10,37 @@ post:
     Since there is no user case for direct access nothing is returned.
   </p>
   '
+  requestBody:
+    required: true
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            theme:
+              type: string
+              description: A .css file
+              format: binary
   responses:
     201:
       description: Successfully uploaded theme
       content:
         application/json:
           schema: {}
+    422:
+      description: Invalid file format
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: intenger
+                enum: [422]
+                description: The HTTP Status Code
+              message:
+                type: string
+                description: An error message
     500:
       $ref: ../../../../components/500.yaml
 delete:
