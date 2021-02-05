@@ -53,5 +53,3 @@ post:
                 $ref: ../../components/tenant.yaml
     422:
       $ref: ../../components/422.yaml
-    500:
-      $ref: ../../components/500.yaml

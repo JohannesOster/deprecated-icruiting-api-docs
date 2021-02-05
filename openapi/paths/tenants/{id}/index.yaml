@@ -13,8 +13,6 @@ get:
             $ref: ../../../components/tenant.yaml
     404:
       $ref: ../../../components/404.yaml
-    500:
-      $ref: ../../../components/500.yaml
 delete:
   tags:
     - tenants
@@ -28,5 +26,3 @@ delete:
           schema: {}
     404:
       $ref: ../../../components/404.yaml
-    500:
-      $ref: ../../../components/500.yaml
