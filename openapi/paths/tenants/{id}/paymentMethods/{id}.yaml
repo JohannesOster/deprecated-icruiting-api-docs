@@ -1,4 +1,16 @@
 delete:
   tags:
     - tenants
+  security:
+    - JWT: [admin required]
   summary: Delete payment method
+  responses:
+    200:
+      description: Successfully deleted payment method
+      content:
+        application/json:
+          schema: {}
+    401:
+      $ref: ../../../../components/401.yaml
+    403:
+      $ref: ../../../../components/403.yaml

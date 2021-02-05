@@ -1,4 +1,18 @@
 post:
   tags:
     - tenants
+  security:
+    - JWT: [admin required]
   summary: Set default payment method
+  responses:
+    200:
+      description: Successfully set default payment method
+      content:
+        application/json:
+          schema:
+            type: object
+            description: A stripe customer object
+    401:
+      $ref: ../../../../components/401.yaml
+    403:
+      $ref: ../../../../components/403.yaml

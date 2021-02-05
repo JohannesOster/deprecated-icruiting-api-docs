@@ -1,4 +1,20 @@
 get:
   tags:
     - tenants
+  security:
+    - JWT: [admin required]
   summary: List payment methods
+  responses:
+    200:
+      description: Successfully listed payment methods
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+              description: A stripe payment method object
+    401:
+      $ref: ../../../../components/401.yaml
+    403:
+      $ref: ../../../../components/403.yaml

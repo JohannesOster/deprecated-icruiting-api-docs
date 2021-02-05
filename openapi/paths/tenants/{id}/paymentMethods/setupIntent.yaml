@@ -1,4 +1,18 @@
-get:
+post:
   tags:
     - tenants
+  security:
+    - JWT: [admin required]
   summary: Create stripe setup intent
+  responses:
+    200:
+      description: Successfully created setup intent
+      content:
+        application/json:
+          schema:
+            type: object
+            description: A stripe setup intent
+    401:
+      $ref: ../../../../components/401.yaml
+    403:
+      $ref: ../../../../components/403.yaml
