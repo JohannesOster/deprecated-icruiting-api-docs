@@ -1,4 +1,19 @@
 delete:
   tags:
     - tenants
-  summary: Delete subscription
+  security:
+    - JWT: [admin required]
+  summary: Cancel subscription
+  description: Cancel a stripe subscription referenced by its id.
+  responses:
+    200:
+      description: Successfully canceld subscription
+      content:
+        application/json:
+          schema: {}
+    404:
+      $ref: ../../../../components/404.yaml
+    401:
+      $ref: ../../../../components/401.yaml
+    403:
+      $ref: ../../../../components/403.yaml

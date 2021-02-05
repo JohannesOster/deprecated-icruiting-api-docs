@@ -1,6 +1,8 @@
 post:
   tags:
     - tenants
+  security:
+    - JWT: [admin required]
   summary: Create subscription
   description: '
   <p>Create a new stripe subscription</p>
@@ -26,9 +28,15 @@ post:
           schema: 
             type: object
             description: A stripe subscription object
+     401:
+        $ref: ../../../../components/401.yaml
+     403:
+        $ref: ../../../../components/403.yaml
 get:
   tags:
     - tenants
+  security:
+    - JWT: [admin required]
   summary: List subscriptions
   description: List all subscription with a status of active or trial
   responses:
@@ -41,3 +49,7 @@ get:
             items:
               type: object
               description: A stripe subscription object
+    401:
+      $ref: ../../../../components/401.yaml
+    403:
+      $ref: ../../../../components/403.yaml

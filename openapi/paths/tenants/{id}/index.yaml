@@ -1,7 +1,8 @@
 get:
   tags:
     - tenants
-  operationId: retrieveTenant
+  security:
+    - JWT: [admin required]
   summary: Retrieve tenant
   description: Retrieve a specific tenant by its tenantId
   responses:
@@ -13,9 +14,15 @@ get:
             $ref: ../../../components/tenant.yaml
     404:
       $ref: ../../../components/404.yaml
+    401:
+      $ref: ../../../components/401.yaml
+    403:
+      $ref: ../../../components/403.yaml
 delete:
   tags:
     - tenants
+  security:
+    - JWT: [admin required]
   summary: Delete tenant
   description: Delete a specific tenant
   responses:
@@ -26,3 +33,7 @@ delete:
           schema: {}
     404:
       $ref: ../../../components/404.yaml
+    401:
+      $ref: ../../../components/401.yaml
+    403:
+      $ref: ../../../components/403.yaml

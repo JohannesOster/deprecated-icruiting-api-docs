@@ -8,6 +8,13 @@ info:
 tags:
   - name: tenants
     description: Tenants are the central multi tenancy ensuring entity.
+
+components:
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
 paths:
   /tenants:
     $ref: ./paths/tenants/index.yaml

@@ -1,6 +1,8 @@
 post:
   tags:
     - tenants
+  security:
+    - JWT: [admin required]
   summary: Upload theme
   description: '
   <p>Uplod a new .css theme for the tenants application-forms.</p>
@@ -43,9 +45,15 @@ post:
               message:
                 type: string
                 description: An error message
+    401:
+      $ref: ../../../../components/401.yaml
+    403:
+      $ref: ../../../../components/403.yaml
 delete:
   tags:
     - tenants
+  security:
+    - JWT: [admin required]
   summary: Delete theme
   description: '
   <p>Delete .css theme file and update theme column of tenant entity.</p>
@@ -60,3 +68,7 @@ delete:
       content:
         application/json:
           schema: {}
+    401:
+      $ref: ../../../../components/401.yaml
+    403:
+      $ref: ../../../../components/403.yaml

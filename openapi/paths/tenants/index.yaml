@@ -1,7 +1,6 @@
 post:
   tags:
     - tenants
-  operationId: createTenant
   summary: Create tenant
   description: '
     <p>
@@ -53,3 +52,5 @@ post:
                 $ref: ../../components/tenant.yaml
     422:
       $ref: ../../components/422.yaml
+    401:
+      $ref: ../../components/401.yaml
