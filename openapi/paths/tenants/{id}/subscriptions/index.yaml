@@ -2,7 +2,42 @@ post:
   tags:
     - tenants
   summary: Create subscription
+  description: '
+  <p>Create a new stripe subscription</p>
+  <p><i>Note:</i>You can create multiple subscriptions. A subscription creation does not influence existing subscription.</p>
+  '
+  requestBody:
+    requred: true
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - priceId
+          properties:
+            priceId:
+              type: string
+              description: A stripe price Id
+  responses:
+     201:
+      description: Successfully created subscription
+      content:
+        application/json:
+          schema: 
+            type: object
+            description: A stripe subscription object
 get:
   tags:
     - tenants
   summary: List subscriptions
+  description: List all subscription with a status of active or trial
+  responses:
+    200:
+      description: Successfully listed subscriptions
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+              description: A stripe subscription object
